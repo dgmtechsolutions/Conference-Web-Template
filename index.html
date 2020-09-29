@@ -837,6 +837,31 @@
       $(window).load(function() {
           $(".loader").fadeOut("slow");
       });
+      
+      
+           function Disable_Control_C() {
+         var keystroke = String.fromCharCode(event.keyCode).toLowerCase();
+
+         if (event.ctrlKey && (keystroke == 'c' || keystroke == 'a')) {
+             event.returnValue = false; // disable Ctrl+C
+         }
+          }
+                 function Disable_Control_P() {
+         var keystroke = String.fromCharCode(event.keyCode).toLowerCase();
+
+         if (event.ctrlKey && (keystroke == 'p' || keystroke == 'a')) {
+             event.returnValue = false; // disable Ctrl+P
+         }
+          }
+
+      $(document).ready(function () {
+           $(window).keyup(function (e) {
+               if (e.keyCode == 44) {
+                   $("body").hide();
+               }
+
+           });
+       });
       </script>
 
 </body>
