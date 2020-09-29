@@ -749,10 +749,10 @@
     
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong>DGM Tech Solutions</strong>. All Rights Reserved
+        &copy; 2019-2020 <strong>DGM Tech Solutions</strong>. All Rights Reserved
       </div>
       <div class="credits">
-        Designed by <a href="https://damodhiran.github.io/dgmtech">DGM Tech Solutions</a>
+        Designed by <a href="https://damodhiran.github.io/dgmtech">DGM Tech Solutions</a><br>
         User & Client : <a><strong> Add your Name </strong></a>
       </div>
     </div>
@@ -798,6 +798,24 @@
           $('#id').bind('cut copy paste', function (e) {
               e.preventDefault();
           });
+      });
+      
+      function copyToClipboard() {
+
+        var aux = document.createElement("input");
+        aux.setAttribute("value", "print screen disabled!");      
+        document.body.appendChild(aux);
+        aux.select();
+        document.execCommand("copy");
+        // Remove it from the body
+        document.body.removeChild(aux);
+        alert("Print screen disabled!");
+      }
+
+        $(window).keyup(function(e){
+          if(e.keyCode == 44){
+            copyToClipboard();
+          }
       });
       </script>
 
